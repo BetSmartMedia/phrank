@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>{% block title %}Phrank{% endblock %}</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+
+	<div>
+		<h1>Phrank</h1>
+		<h5>Cobbled together from various body parts.</h5>
+		<hr />
+	</div>
+
+	<div>
+		{% for msg in flash %}
+			<div class="flash">{{ msg|e }}</div>
+		{% endfor %}
+
+		{% block content %}
+		{% endblock %}
+	</div>
+
+</body>
+</html>
