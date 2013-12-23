@@ -34,17 +34,23 @@ function copyfile($src, $dst)
  */
 makedir('app');
 
-$app_dirs = ['bin','config','controllers','models','schemas','templates'];
+$app_dirs = [
+	'bin', 'config', 'controllers', 'middleware',
+	'models', 'schemas', 'templates'
+];
 foreach($app_dirs as $dir) {
 	makedir('app/' . $dir);
 }
+
+// additional subdirs
 makedir('app/templates/home');
 
+// files
 copyfile('config.php', 'app/config/config.php');
 copyfile('routes.php', 'app/config/routes.php');
+copyfile('middleware.php', 'app/config/middleware.php');
 copyfile('c_home.php', 'app/controllers/home.php');
 copyfile('t_layout.html', 'app/templates/layout.html');
-
 copyfile('t_index.html', 'app/templates/home/index.html');
 
 /*

@@ -49,19 +49,18 @@ $app->config('log.writer', new \Phrank\Extensions\Slim\LogWriter($logger));
 $app->config('view', $container['view']);
 
 /*-----------------------------------------------------------------------
- * Middleware: Authentication
- * If there's a lot of MW, then it can be extracted into a separate file.
+ * Apply middleware
  *-----------------------------------------------------------------------*/
-$middleware = [
-	'auth' => function() use($app) {
-		if(!isset($_SESSION['_authenticated']) || !$_SESSION['_authenticated']) {
-			$app->redirect($app->urlFor('loginForm'));
-		}
-	}
-];
+include ROOT . '/app/config/middleware.php';
+foreach($app_middleware as $mw) {
+	$app->add(new $mw);
+}
 
+/*-----------------------------------------------------------------------
+ * Bind routes to controllers
+ *-----------------------------------------------------------------------*/
 include ROOT . '/app/config/routes.php';
-\Phrank\Extensions\Slim\RouteBinder::bind($app, $routes, $middleware);
+\Phrank\Extensions\Slim\RouteBinder::bind($app, $routes, $route_middleware);
 
 /*-----------------------------------------------------------------------
  * Run it!
