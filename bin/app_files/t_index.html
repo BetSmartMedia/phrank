@@ -1,27 +1,12 @@
-{% extends 'layout.html' %}
+<?php
+/**
+ * Entry point for web requests.
+ */
 
-{% block content %}
-	<p style="float:right">
-		<img src="http://1.bp.blogspot.com/_kHpAP39uhMw/S7oqr8fNCnI/AAAAAAAAB0E/kwjXM6lArH4/s400/thoughtfulfrank.jpg" style="width:75%; max-width:400px"><br>
-		<cite style="font-size:small"><a href="http://kwmonster.blogspot.ca/2010/04/forbidden-love-of-frankenstein-step-by.html">Image credit</a></cite>
-	</p>
+define('ROOT', dirname(__FILE__) . '/..');
+define('PHRANK', ROOT . '/vendor/bsm/phrank/Phrank');
 
-	<h2>Quickstart</h2>
-	<ol style="font-family:monospace">
-		<li>$ composer install</li>
-		<li>$ createdb phrank</li>
-		<li>$ php -S 127.0.0.1:8000</li>
-	</ol>
+include PHRANK . '/bootstrap.php';
+include PHRANK . '/bootstrap-web.php';
 
-	<h2>Docs</h2>
-	<p>
-		There are no docs for Phrank yet, but most of the magic was written
-		by other talented people, and you can find their docs here:
-	</p>
-	<ul>
-		<li><a href="http://docs.slimframework.com">Slim (routing)</a></li>
-		<li><a href="http://idiorm.readthedocs.org/en/latest/">Idiorm (ORM)</a></li>
-		<li><a href="http://paris.readthedocs.org/en/latest/">Paris (data models)</a></li>
-		<li><a href="http://twig.sensiolabs.org/documentation">Twig (templates)</a></li>
-	</ul>
-{% endblock %}
+?>

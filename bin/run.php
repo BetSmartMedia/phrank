@@ -5,8 +5,9 @@
  * Eg: php phrank/bin/run.php app/bin/myscript.php
  */
 
-define('ROOT', dirname(__FILE__) . '/../..');
-include ROOT . '/phrank/base/bootstrap.php';
+define('ROOT', getcwd());
+define('PHRANK', ROOT . '/vendor/bsm/phrank/Phrank');
+include PHRANK . '/bootstrap.php';
 
 if(count($argv) < 2) {
 	die("usage: {$argv[0]} <script>\n");
