@@ -10,5 +10,6 @@ define('ROOT', dirname(__FILE__) . '/..');
 // location of the bootstrap files.
 include ROOT . '/vendor/bsm/phrank/Phrank/bootstrap.php';
 include ROOT . '/vendor/bsm/phrank/Phrank/bootstrap-web.php';
+$app->run();
 
 ?>

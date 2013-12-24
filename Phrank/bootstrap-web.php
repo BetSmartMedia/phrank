@@ -62,9 +62,4 @@ foreach($app_middleware as $mw) {
 include ROOT . '/app/config/routes.php';
 \Phrank\Extensions\Slim\RouteBinder::bind($app, $routes, $route_middleware);
 
-/*-----------------------------------------------------------------------
- * Run it!
- *-----------------------------------------------------------------------*/
-$app->run();
-
 ?>
