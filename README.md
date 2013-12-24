@@ -11,7 +11,7 @@ provide a full MVC-style framework.
     $ composer install
     $ createdb phrank
     $ php phrank/bin/new_app.php
-    $ php -S 127.0.0.1:8000
+    $ php -S 127.0.0.1:8000 -t public
 
 ### Docs
 
