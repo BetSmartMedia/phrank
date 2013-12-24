@@ -1,5 +1,20 @@
 {
 	"name": "bsm/phrank",
+
+	"type": "library",
+	"description": "A simple framework composed of other third-party libraries",
+	"homepage": "https://github.com/BetSmartMedia/phrank",
+	"keywords": ["framework","mvc"],
+	"license": "MIT",
+
+	"authors": [
+		{
+			"name": "Judd Vinet",
+			"email": "judd@betsmartmedia.com",
+			"homepage": "http://www.betsmartmedia.com"
+		}
+	],
+
 	"require": {
 		"php":            ">=5.5.0",
 		"slim/slim":      "2.*",
@@ -10,5 +25,9 @@
 		"twig/twig":      "1.*",
 		"d11wtq/boris":   "1.*",
 		"monolog/monolog": "*"
+	},
+
+	"autoload": {
+		"psr-0": { "Phrank": "." }
 	}
 }
