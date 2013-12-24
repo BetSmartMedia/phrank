@@ -52,6 +52,9 @@ $view->parserOptions = [
 $view->parserExtensions = [
 	new \Slim\Views\TwigExtension()
 ];
+if(MODE === 'development') {
+	$view->parserExtensions[] = new Twig_Extension_Debug();
+}
 $container['view'] = $view;
 
 /*-----------------------------------------------------------------------
