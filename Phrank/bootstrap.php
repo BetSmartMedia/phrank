@@ -17,9 +17,23 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $phrank);
  * Setup Auto-loading
  *-----------------------------------------------------------------------*/
 require 'vendor/autoload.php';
-spl_autoload_register(function($class) {
-	$class = strtolower(str_replace('\\', '/', $class));
-	require_once ROOT . "/$class.php";
+spl_autoload_register(function($class) use($phrank) {
+	if(substr($class, 0, 1) == '\\') {
+		$class = substr($class, 1);
+	}
+	switch(true) {
+		case substr($class, 0, 7) == 'Phrank\\':
+			$path = $phrank;
+			break;
+		case substr($class, 0, 4) == 'App\\':
+			$path = ROOT;
+			$class = strtolower($class);
+			break;
+		default:
+			return;
+	}
+	$class = str_replace('\\', '/', $class);
+	require_once $path . "/$class.php";
 });
 // Paris isn't namespace-aware, so put it in our include path
 set_include_path(get_include_path() . PATH_SEPARATOR . ROOT . '/app/models');

@@ -6,7 +6,7 @@
  */
 
 define('ROOT', getcwd());
-define('PHRANK', ROOT . '/vendor/bsm/phrank/Phrank');
+define('PHRANK', realpath(dirname(__FILE__) . '/../Phrank'));
 include PHRANK . '/bootstrap.php';
 
 if(count($argv) < 2) {

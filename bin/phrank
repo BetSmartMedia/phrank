@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+if(count($argv) < 2) {
+	echo "usage: {$argv[0]} <command> [args]\n\n";
+	echo "Available commands:\n";
+	echo "  new_app\n";
+	echo "  repl\n";
+	echo "  run <script>\n\n";
+}
+
+$bindir = dirname(realpath($argv[0]));
+
+switch($argv[1]) {
+	case 'new_app': 
+	case 'repl';
+	case 'run':
+		$cmd = $argv[1];
+		break;
+	default:
+		echo "error: Invalid command: {$argv[1]}\n";
+		exit(1);
+}
+
+exec("/usr/bin/env php $bindir/{$argv[1]}.php");
+
+?>
