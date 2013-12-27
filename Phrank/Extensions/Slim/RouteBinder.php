@@ -25,7 +25,7 @@ class RouteBinder
 
 			if(count($specparts) == 1) {
 				// This is form #2, where the value is a sub-array of routes.
-				self::bind($app, $dest, $middleware, $specparts[0]);
+				self::bind($app, $dest, $middleware, $prefix . $specparts[0]);
 				continue;
 			}
 
