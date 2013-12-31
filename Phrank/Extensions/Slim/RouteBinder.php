@@ -33,6 +33,9 @@ class RouteBinder
 			$method = $specparts[0];
 			$path   = $prefix . $specparts[1];
 
+			// Nix any double slashes that can arise from nested routes.
+			$path = str_replace('//', '/', $path);
+
 			$ctrlname  = $dest[0];
 			$ctrlfunc  = $dest[1];
 			$appliedmw = $dest[2] ?: [];
