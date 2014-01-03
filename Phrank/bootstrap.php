@@ -77,6 +77,7 @@ $container['view'] = $view;
 require 'vendor/j4mie/idiorm/idiorm.php';
 require 'vendor/j4mie/paris/paris.php';
 ORM::configure(DSN);
+ORM::configure('return_result_sets', true);
 Model::$auto_prefix_models = '\\App\\Models\\';
 
 ?>
