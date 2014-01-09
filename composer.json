@@ -16,15 +16,16 @@
 	],
 
 	"require": {
-		"php":            ">=5.5.0",
-		"slim/slim":      "2.*",
-		"slim/views":     "0.1.*",
-		"slim/extras":    "2.*",
-		"j4mie/idiorm":   "*",
-		"j4mie/paris":    "*",
-		"twig/twig":      "1.*",
-		"d11wtq/boris":   "1.*",
-		"monolog/monolog": "*"
+		"php":                  ">=5.5.0",
+		"slim/slim":            "2.*",
+		"slim/views":           "0.1.*",
+		"slim/extras":          "2.*",
+		"j4mie/idiorm":         "*",
+		"j4mie/paris":          "*",
+		"gabordemooij/redbean": "=3.5.1",
+		"twig/twig":            "1.*",
+		"d11wtq/boris":         "1.*",
+		"monolog/monolog":      "*"
 	},
 
 	"bin": ["bin/phrank"],

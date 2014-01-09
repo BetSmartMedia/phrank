@@ -80,4 +80,13 @@ ORM::configure(DSN);
 ORM::configure('return_result_sets', true);
 Model::$auto_prefix_models = '\\App\\Models\\';
 
+/*-----------------------------------------------------------------------
+ * Instantiate RedBean (ORM, Models) and connect to database.
+ *-----------------------------------------------------------------------*/
+/*
+define('REDBEAN_MODEL_PREFIX', '\App\Models\\');
+use RedBean_Facade as R;
+R::setup(DSN);
+*/
+
 ?>
