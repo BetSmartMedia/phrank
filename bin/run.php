@@ -8,6 +8,9 @@
 define('ROOT', getcwd());
 define('PHRANK', realpath(dirname(__FILE__) . '/../Phrank'));
 include PHRANK . '/bootstrap.php';
+if(file_exists(ROOT . '/app/bootstrap.php')) {
+	include ROOT . '/app/bootstrap.php';
+}
 
 if(count($argv) < 2) {
 	die("usage: {$argv[0]} <script>\n");
