@@ -21,7 +21,7 @@ abstract class Controller
 	/**
 	 * Retrieve an instance of the logger singleton.
 	 */
-	function getLogger()
+	public function getLogger()
 	{
 		$container = \Phrank\Base\Container::getInstance();
 		return $container['logger'];
