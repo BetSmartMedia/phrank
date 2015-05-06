@@ -34,7 +34,7 @@ abstract class Model extends \Model
 	}
 
 	/**
-	 * Return an assoc. array of fields from the model object to the caller. 
+	 * Return an assoc. array of fields from the model object to the caller.
 	 * If `$fields` is unspecified, then the object's `$public_fields` list
 	 * will be used.
 	 *

@@ -18,7 +18,7 @@ class RouteBinder
 			//
 			// The latter means that the $dest value is actually an
 			// array of routes that will bind under the "/post" path.
-			
+
 			// Flatten whitespace and tokenize path spec
 			$spec = preg_replace('/\s+/', ' ', $spec);
 			$specparts = explode(' ', $spec);
